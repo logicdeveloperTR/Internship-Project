@@ -1,0 +1,28 @@
+{
+  "culture": "en",
+  "texts": {
+    "Menu:Home": "Home",
+    "Welcome": "Welcome",
+    "LongWelcomeMessage": "Welcome to the application. This is a startup project based on the ABP framework. For more information, visit abp.io.",
+    "Enum:EmployeeDepartment.0": "Human Resources",
+    "Enum:EmployeeDepartment.1": "Mobile Development",
+    "Enum:EmployeeDepartment.2": "Artificial Intelligence",
+    "Enum:EmployeeDepartment.3": "Marketing",
+    "Enum:EmployeeDepartment.4": "Finance",
+    "Enum:EmployeeDepartment.5": "Design",
+    "Enum:EmployeeDepartment.6": "Law",
+    "Enum:EmployeeDepartment.7": "Web Development",
+    "Menu:Employees": "Employees",
+    "Menu:Projects": "Projects",
+    "Menu:EmployeeTracker": "Employee Tracker",
+    "Permission:EmployeeTracker": "Employee Tracker",
+    "Permission:Employees": "Employee Management",
+    "Permission:Employees.Create": "Creating new employees",
+    "Permission:Employees.Edit": "Editing the employees",
+    "Permission:Employees.Delete": "Deleting the employees",
+    "Permission:Projects": "Project Management",
+    "Permission:Projects.Create": "Creating new projects",
+    "Permission:Projects.Edit": "Editing the projects",
+    "Permission:Projects.Delete": "Deleting the projects"
+  }
+}
