@@ -1,0 +1,31 @@
+﻿@page
+@using EmployeeTracker.Permissions;
+@using Microsoft.AspNetCore.Authorization;
+@model EmployeeTracker.Web.Pages.Employees.IndexModel
+@inject IAuthorizationService AuthorizationService
+
+@section scripts
+{
+    <abp-script src="/Pages/Employees/Index.js" />
+}
+
+<abp-card>
+    <abp-card-header>
+        <abp-row>
+            <abp-column size-md="_6">
+                <abp-card-title>Employees</abp-card-title>
+            </abp-column>
+            <abp-column size-md="_6" class="text-right">
+                @if (await AuthorizationService.IsGrantedAsync(EmployeeTrackerPermissions.Employees.Create)){
+                <abp-button id="NewEmployeeButton"
+                            text="New Employee"
+                            icon="plus"
+                            button-type="Primary"/>
+                }
+            </abp-column>
+        </abp-row>
+    </abp-card-header>
+    <abp-card-body>
+        <abp-table striped-rows="true" id="EmployeesTable"></abp-table>
+    </abp-card-body>
+</abp-card>

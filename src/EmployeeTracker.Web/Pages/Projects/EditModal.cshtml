@@ -1,0 +1,40 @@
+﻿@page
+@using Volo.Abp.AspNetCore.Mvc.UI.Bootstrap.TagHelpers.Modal;
+@model EmployeeTracker.Web.Pages.Projects.EditModal
+
+@{
+    Layout = null;
+}
+
+<form method="post" id="EditProjectModal" asp-page="/Projects/EditModal">
+    <abp-modal>
+        <abp-modal-header title="Edit Project"></abp-modal-header>
+        <abp-modal-body>
+            <abp-tabs name="edit-project-modal-tabs">
+                <abp-tab title="Project Information" class="mt-3">
+                    <div id="project-information-wrapper" class="mt-3">
+                        <abp-input asp-for="Id" />
+
+                        <abp-input asp-for="EditingProject.Name" label="Project Name" />
+                        <abp-input asp-for="EditingProject.Description" label="Description" />
+                        <abp-input asp-for="EditingProject.StartTime" type="date" label="Start Date"/>
+                        <abp-input asp-for="EditingProject.EndTime" type="date" label="End Date" />
+
+
+                    </div>
+                </abp-tab>
+                <abp-tab title="Leaders">
+                    <div id="leader-list-wrapper" class="mt-3">
+                        @for (var i = 0; i < Model.Leaders.Count; i++)
+                        {
+                            var leader = Model.Leaders[i];
+                            <abp-input abp-id-name="@Model.Leaders[i].IsSelected" asp-for="@leader.IsSelected" label="@leader.Name" />
+                            <input abp-id-name="@Model.Leaders[i].Name" asp-for="@leader.Name" />
+                        }
+                    </div>
+                </abp-tab>
+            </abp-tabs>
+        </abp-modal-body>
+        <abp-modal-footer buttons="@(AbpModalButtons.Cancel|AbpModalButtons.Save)"></abp-modal-footer>
+    </abp-modal>
+</form>

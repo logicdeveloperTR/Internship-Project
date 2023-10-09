@@ -1,0 +1,25 @@
+﻿@page
+@model EmployeeTracker.Web.Pages.Projects.IndexModel
+@section scripts
+    {
+    <abp-script src="/Pages/Projects/Index.js" />
+}
+
+<abp-card>
+    <abp-card-header>
+        <abp-row>
+            <abp-column size-md="_6">
+                <abp-card-title>Projects</abp-card-title>
+            </abp-column>
+            <abp-column size-md="_6" class="text-right">
+                <abp-button id="NewProjectButton"
+                            text="New Project"
+                            icon="plus"
+                            button-type="Primary" />
+            </abp-column>
+        </abp-row>
+    </abp-card-header>
+    <abp-card-body>
+        <abp-table striped-rows="true" id="ProjectsTable"></abp-table>
+    </abp-card-body>
+</abp-card>
